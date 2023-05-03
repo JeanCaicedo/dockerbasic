@@ -1,0 +1,78 @@
+
+//Primeros pasos docker 
+
+docker run ubuntu echo "Hello World"
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+2ab09b027e7f: Pull complete
+Digest: sha256:67211c14fa74f070d27cc59d69a7fa9aeff8e28ea118ef3babc295a0428a6d21
+Status: Downloaded newer image for ubuntu:latest
+Hello World
+
+
+
+PS C:\Users\jeanz\OneDrive\Escritorio\JK\Estudios\nuevo-bootcamp\docker> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+
+
+PS C:\Users\jeanz\OneDrive\Escritorio\JK\Estudios\nuevo-bootcamp\docker> docker ps -a
+CONTAINER ID   IMAGE     COMMAND                CREATED          STATUS                      PORTS     NAMES
+3fc32f0ca0d7   ubuntu    "echo 'Hello World'"   46 seconds ago   Exited (0) 45 seconds ago             quizzical_borg
+
+
+
+PS C:\Users\jeanz\OneDrive\Escritorio\JK\Estudios\nuevo-bootcamp\docker> docker "version"
+Client:
+ Cloud integration: v1.0.31
+ Version:           23.0.5
+ API version:       1.42
+ Go version:        go1.19.8
+ Git commit:        bc4487a
+ Built:             Wed Apr 26 16:20:14 2023
+ OS/Arch:           windows/amd64
+ Context:           default
+
+Server: Docker Desktop 4.19.0 (106363)
+ Engine:
+  Version:          23.0.5
+  API version:      1.42 (minimum version 1.12)
+  Go version:       go1.19.8
+  Git commit:       94d3ad6
+  Built:            Wed Apr 26 16:17:45 2023
+  OS/Arch:          linux/amd64
+  Version:          1.6.20
+  GitCommit:        2806fc1057397dbaeefbea0e4e17bddfbd388f38
+
+ runc:
+  Version:          1.1.5
+  GitCommit:        v1.1.5-0-gf19387a
+ docker-init:
+
+
+
+ PS C:\Users\jeanz\OneDrive\Escritorio\JK\Estudios\nuevo-bootcamp\docker> docker info format "{{json .}}" > docker-config.json
+"docker info" accepts no arguments.
+See 'docker info --help'.
+
+Usage:  docker info [OPTIONS]
+
+Display system-wide information
+
+
+
+PS C:\Users\jeanz\OneDrive\Escritorio\JK\Estudios\nuevo-bootcamp\docker> docker pull busybox
+Using default tag: latest
+latest: Pulling from library/busybox
+4b35f584bb4f: Pull complete
+Digest: sha256:b5d6fe0712636ceb7430189de28819e195e8966372edfc2d9409d79402a0dc16
+Status: Downloaded newer image for busybox:latest
+docker.io/library/busybox:latest
+
+
+
+PS C:\Users\jeanz\OneDrive\Escritorio\JK\Estudios\nuevo-bootcamp\docker> docker image ls    
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+busybox      latest    7cfbbec8963d   6 weeks ago   4.86MB
+ubuntu       latest    08d22c0ceb15   7 weeks ago   77.8MB
+
